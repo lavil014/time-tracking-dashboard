@@ -11,19 +11,18 @@ const fetchingData = async ()=>{
 
         let response = await data.json();
 
-        let response1 = response[0].title;
-        let response2 = response[0].timeframes.daily.current;
-        let response3 = response[0].timeframes.daily.previous;
 
         response.forEach(element => {
+
+          const {title, timeframes} = element;
+
             cardContainer.innerHTML += 
             `
-            <div class="card">
-              <h1>${response1}</h1>
-              <h2>${response2}</h2>
-              <h3>Last week - ${response3}hrs</h3>
-            </div>
-            
+              <div class="card">
+                <span>${title}</span><br>
+                <span>${timeframes.daily.current}hrs</span><br>
+                <span>Last Week - ${timeframes.daily.previous}hrs</span>  
+              </div>
             `
             console.log(element);
         });
