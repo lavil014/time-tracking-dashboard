@@ -29,6 +29,7 @@ body{
     font-family: "Rubik", sans-serif;
     font-size: 1rem;
     background-color: var(--Verydarkblue);
+    height: 100dvh;
 }
 
 
@@ -98,33 +99,36 @@ button:hover{
 
 .card-container{
   display: grid;
-  grid-template-rows: 1fr,1fr, 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .top-card{
   background-color: var(--Lightred-work);
   border-radius: 1rem 1rem 0 0; 
-  min-width: 11.9rem; 
+  min-width: 10rem; 
 }
 
 .top-card img{
   width: 2.5rem;
   height: 2rem;
-  margin-left: 8.9rem;
+  margin-left: 7rem;
 }
 
 .inner-card{
-    min-width: 12rem;
-    min-height: 10rem;
+    max-width: 11.5rem;
+    max-height: 8.3rem;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     text-align: left;
     color: white;
     padding: 1rem;
-    margin-top: -10px;
+    margin-top: -0.8rem;
     background-color: var(--Darkblue);
     font-weight: 300;
+    position: relative;
 }
 
 .inner-card{
