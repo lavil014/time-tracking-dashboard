@@ -16,12 +16,12 @@ const renderCards = (data, timeFrame)=>{
               <img src="/images/icon-work.svg" alt="">
             </div>
             <div class="inner-card">
-            <div class="title">
+            <div class="tittle">
               <span>${title}</span><img src="/images/icon-ellipsis.svg" alt="">
             </div>
             <br>
             <span>${timeframes[timeFrame].current}hrs</span><br>
-            <spaLast Week - ${timeframes[timeFrame].previous}hrs</span>  
+            <spa> Last Week - ${timeframes[timeFrame].previous}hrs</span>  
           </div>
         `
   });
