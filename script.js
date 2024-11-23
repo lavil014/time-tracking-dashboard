@@ -1,5 +1,13 @@
 const btns = document.querySelectorAll('button');
 const cardContainer = document.querySelector('.card-container')
+const backgroundColors = [
+   'hsl(15, 100%, 70%)',
+   'hsl(195, 74%, 62%)',
+   'hsl(348, 100%, 68%)',
+   'hsl(145, 58%, 55%)',
+   'hsl(264, 64%, 52%)',
+   'hsl(43, 84%, 65%)'
+]
 
 
 
@@ -12,8 +20,8 @@ const renderCards = (data, timeFrame)=>{
       cardContainer.innerHTML +=
         `
           <div class="card">
-            <div class="top-card">
-              <img src="/images/icon-work.svg" alt="">
+            <div class="top-card" style="background-color: ${backgroundColors[1]} ;">
+              <img src="/images/icon-${title}.svg" alt="">
             </div>
             <div class="inner-card">
             <div class="tittle">
@@ -42,6 +50,7 @@ const fetchingData = async ()=>{
 
               renderCards(response, timeFrame);
           })
+
 });
     }
     catch(error){
