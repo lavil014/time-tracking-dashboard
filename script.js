@@ -15,12 +15,15 @@ const renderCards = (data, timeFrame)=>{
     
   cardContainer.innerHTML = '';
 
-  data.forEach(({title,timeframes}) => {
+  data.forEach(({title,timeframes}, index) => {
        
+    const bgColor = backgroundColors[index % backgroundColors.length];
+
+
       cardContainer.innerHTML +=
         `
           <div class="card">
-            <div class="top-card" style="background-color: ${backgroundColors[1]} ;">
+            <div class="top-card" style="background-color: ${bgColor} ;">
               <img src="/images/icon-${title}.svg" alt="">
             </div>
             <div class="inner-card">
@@ -41,15 +44,21 @@ const fetchingData = async ()=>{
 
     try{
         let data = await fetch('/data.json');
-
+        
         let response = await data.json();
+        let index = response.title;
+
+        renderCards(response, 'daily');
 
           btns.forEach(btnElement => {
             btnElement.addEventListener('click',(e)=>{
               let timeFrame = e.target.id;
-
+            
               renderCards(response, timeFrame);
+
           })
+
+
 
 });
     }
@@ -60,4 +69,3 @@ const fetchingData = async ()=>{
 }
 
 fetchingData()
-
