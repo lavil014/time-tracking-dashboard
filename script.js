@@ -31,9 +31,11 @@ const renderCards = (data, timeFrame)=>{
               <span>${title}</span><img src="/images/icon-ellipsis.svg" alt="">
             </div>
             <br>
-            <span>${timeframes[timeFrame].current}hrs</span><br>
-            <spa> Last Week - ${timeframes[timeFrame].previous}hrs</span>  
-          </div>
+            <div class = "card-details">
+              <span>${timeframes[timeFrame].current}hrs</span><br>
+              <span> Last Week - ${timeframes[timeFrame].previous}hrs</span>  
+            </div>          
+            </div>
         `
   });
 }

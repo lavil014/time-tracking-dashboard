@@ -34,8 +34,8 @@ body{
 
 
 .profile-container{
-    border: solid 0.1rem;
-    border-radius: 0.3rem;
+    /*border: solid 0.1rem;
+    border-radius: 0.3rem;*/
     display: flex;
     flex-direction: column;
     border-radius: 1rem;
@@ -117,8 +117,10 @@ button:hover{
 }
 
 .inner-card{
+    /*    
     max-width: 11.5rem;
     max-height: 8.3rem;
+    */
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -138,7 +140,12 @@ button:hover{
 }
 
 .inner-card :nth-child(3){
-  font-size: 2rem;
+  font-size: 1rem;
+}
+
+.card-details :nth-child(3){
+  font-size: 0.7rem;
+  color: var(--PaleBlue);
 }
 
 .tittle{
@@ -149,4 +156,59 @@ button:hover{
 
 .tittle img{
   height: 0.2rem;
+}
+
+@media (width < 375px){
+  body{
+    display: block;
+  }
+
+  .profile-container{
+    width: 15rem;
+    margin-left: 1rem;
+  }
+
+
+  .profile-section{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-information h1{
+    font-size: 0.8rem;
+  }
+
+  .profile-information h2{
+    font-size: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card{
+    width: 15rem;
+  }
+
+
+  .card-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-details :nth-child(3){
+    font-size: 0.5rem;
+  }
 }
